@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 WORKDIR /source
-COPY . .
+COPY *.csproj *.cs .
 RUN dotnet publish -c release -o /app
 
 ARG LOCALE
